@@ -29,6 +29,10 @@ namespace Tapanyagok.API
             services.AddControllers();
             services.AddDbContext<TapanyagContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("TapanyagDB"), ServerVersion.Parse("10.4.21-mariadb")));
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,8 +45,8 @@ namespace Tapanyagok.API
 
             app.UseRouting();
 
-            app.UseCors(x => x
-              .AllowAnyOrigin());
+            app.UseCors(options => 
+                options.AllowAnyOrigin());
             //.AllowAnyMethod()
             //.AllowAnyHeader());
 
