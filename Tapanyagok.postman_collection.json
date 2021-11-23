@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "9d7e6410-5e81-458f-980e-4c37377caf71",
+		"name": "Tapanyagok",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "jqGrid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/Tapanyagok/jqGrid?_search=true&rows=20&page=1&sidx=energia&sord=asc&searchField=nev&searchString=alma&searchOper=in",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"Tapanyagok",
+						"jqGrid"
+					],
+					"query": [
+						{
+							"key": "_search",
+							"value": "true"
+						},
+						{
+							"key": "rows",
+							"value": "20"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "sidx",
+							"value": "energia"
+						},
+						{
+							"key": "sord",
+							"value": "asc"
+						},
+						{
+							"key": "searchField",
+							"value": "nev"
+						},
+						{
+							"key": "searchString",
+							"value": "alma"
+						},
+						{
+							"key": "searchOper",
+							"value": "in"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:5000/api"
+		}
+	]
+}
