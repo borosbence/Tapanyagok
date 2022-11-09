@@ -17,10 +17,10 @@ namespace Tapanyagok.API
             builder.Services.AddDbContext<TapanyagContext>(options =>
                 options.UseMySql(builder.Configuration.GetConnectionString("TapanyagDB"), ServerVersion.Parse("10.4.24-mariadb")));
 
-            // CORS
+            // CORS engedélyezése
             builder.Services.AddCors(options => 
                 options.AddDefaultPolicy(
-                    policy => policy.WithOrigins("*").AllowAnyHeader().AllowAnyMethod()));
+                    policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
             var app = builder.Build();
 

@@ -21,6 +21,7 @@ namespace Tapanyagok.API.Controllers
             _context = context;
         }
 
+        // POST: api/Tapanyagok/server-side
         [HttpPost]
         [Route("server-side")]
         public async Task<IActionResult> Post([FromForm] DTPostModel model)
