@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2020. Feb 22. 16:03
--- Kiszolgáló verziója: 10.4.8-MariaDB
--- PHP verzió: 7.3.11
+-- Létrehozás ideje: 2022. Nov 09. 14:10
+-- Kiszolgáló verziója: 10.4.24-MariaDB
+-- PHP verzió: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,16 +18,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `tapanyagok`
+-- Adatbázis: `tapanyag`
 --
+CREATE DATABASE IF NOT EXISTS `tapanyag` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `tapanyag`;
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `tapanyag`
+-- Tábla szerkezet ehhez a táblához `tapanyagok`
 --
 
-CREATE TABLE `tapanyag` (
+CREATE TABLE `tapanyagok` (
   `id` int(11) NOT NULL,
   `nev` varchar(50) NOT NULL,
   `energia` decimal(10,1) NOT NULL,
@@ -38,10 +39,10 @@ CREATE TABLE `tapanyag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- A tábla adatainak kiíratása `tapanyag`
+-- A tábla adatainak kiíratása `tapanyagok`
 --
 
-INSERT INTO `tapanyag` (`id`, `nev`, `energia`, `feherje`, `zsir`, `szenhidrat`) VALUES
+INSERT INTO `tapanyagok` (`id`, `nev`, `energia`, `feherje`, `zsir`, `szenhidrat`) VALUES
 (1, '0%-os joghurt', '34.0', '3.4', '0.1', '4.6'),
 (2, '2 tojásos száraztészta', '352.0', '12.4', '2.2', '70.2'),
 (3, '4 tojásos száraztészta', '384.0', '15.0', '3.4', '72.9'),
@@ -546,9 +547,9 @@ INSERT INTO `tapanyag` (`id`, `nev`, `energia`, `feherje`, `zsir`, `szenhidrat`)
 --
 
 --
--- A tábla indexei `tapanyag`
+-- A tábla indexei `tapanyagok`
 --
-ALTER TABLE `tapanyag`
+ALTER TABLE `tapanyagok`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -556,9 +557,9 @@ ALTER TABLE `tapanyag`
 --
 
 --
--- AUTO_INCREMENT a táblához `tapanyag`
+-- AUTO_INCREMENT a táblához `tapanyagok`
 --
-ALTER TABLE `tapanyag`
+ALTER TABLE `tapanyagok`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=501;
 COMMIT;
 
