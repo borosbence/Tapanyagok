@@ -45,7 +45,7 @@ namespace Tapanyagok.API.Controllers
             }
 
             // Sorba rendezés
-            string? sortKey = model?.Columns[model.Order[0].Column]?.Data;
+            string? sortKey = model.Columns[model.Order[0].Column].Data;
             string? sortDirection = model?.Order?[0].Dir;
             if (!string.IsNullOrEmpty(sortKey))
             {
