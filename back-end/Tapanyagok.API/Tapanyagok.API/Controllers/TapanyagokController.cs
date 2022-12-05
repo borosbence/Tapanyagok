@@ -34,6 +34,7 @@ namespace Tapanyagok.API.Controllers
             var query = _context.tapanyagok.AsQueryable();
             // Keresés
             string? searchKey = model?.Search?.Value;
+            int filteredCount = 0;
             if (!string.IsNullOrWhiteSpace(searchKey))
             {
                 searchKey = searchKey.Replace('.', ',');
@@ -42,6 +43,7 @@ namespace Tapanyagok.API.Controllers
                                         x.feherje.ToString().Contains(searchKey) ||
                                         x.szenhidrat.ToString().Contains(searchKey) ||
                                         x.zsir.ToString().Contains(searchKey));
+                filteredCount = query.Count();
             }
 
             // Sorba rendezés
@@ -84,7 +86,7 @@ namespace Tapanyagok.API.Controllers
             // Szűrt elemek kiszámítása
             // Ha nincs keresés akkor minden rekord megjelenik,
             // ha van akkor pedig a keresésben lévő, de nem megjelent (oldalszám szerinti) rekordokat kell visszaadni
-            int filteredRecords = string.IsNullOrWhiteSpace(searchKey) ? totalRecords : totalRecords - result.Count;
+            int filteredRecords = string.IsNullOrWhiteSpace(searchKey) ? totalRecords : totalRecords - filteredCount;
 
             // Válasz készítése
             DTResult<Tapanyag> response = new DTResult<Tapanyag>()
