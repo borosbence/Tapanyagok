@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta content="text/html; charset=utf-8" />
+    <title>Tápanyagok</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+</head>
+<body>
+    <h1>Tápanyagok - Szerver oldal</h1>
+    <table id="tapanyagok" class="display">
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Energia</th>
+                <th>Fehérje</th>
+                <th>Zsír</th>
+                <th>Szénhidrát</th>
+            </tr>
+        </thead>
+    </table>
+    <script>
+        $(document).ready(function() {
+            $('#tapanyagok').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: 'http://localhost:5000/api/Tapanyagok/server-side',
+                    // dataSrc: ''
+                    type: 'POST'
+                },
+                columns: [
+                    { "data": "nev" },
+                    { "data": "energia" },
+                    { "data": "feherje" },
+                    { "data": "zsir" },
+                    { "data": "szenhidrat" },
+                ],
+                language: {
+                    url: "https://cdn.datatables.net/plug-ins/2.1.8/i18n/hu.json"
+                }
+            });
+        } );
+    </script>
+</body>
+</DOCTYPEhtml>
