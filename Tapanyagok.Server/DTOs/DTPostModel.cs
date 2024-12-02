@@ -3,8 +3,8 @@
     public class DTPostModel
     {
         public int Draw { get; set; }
-        public int Start { get; set; } = 0;
-        public int Length { get; set; } = 10;
+        public int Start { get; set; }
+        public int Length { get; set; }
         public Search? Search { get; set; }
         public List<Column>? Columns { get; set; }
         public List<Order>? Order { get; set; }
@@ -21,7 +21,7 @@
 
     public class Search
     {
-        public string? Value { get; set; } = null;
+        public string? Value { get; set; }
         public string? Regex { get; set; }
     }
 

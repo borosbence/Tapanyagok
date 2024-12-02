@@ -6,10 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// DbContext
+// DbContext hozzáadása
 builder.Services.AddDbContext<TapanyagContext>(options =>
 {
     options.UseMySql(builder.Configuration.GetConnectionString("TapanyagDB"), ServerVersion.Parse("10.4.24-mariadb"));
+    // SQL paraméterek mutatása a log-ban
     options.EnableSensitiveDataLogging();
 });
 // CORS engedélyezése

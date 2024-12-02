@@ -30,11 +30,12 @@ namespace Tapanyagok.Server.Controllers
 
             // Összes rekord kiszámítása
             int totalRecords = await query.CountAsync();
-            // Szűrt rekordok száma
-            int filteredCount = 0;
 
             // Keresés
             string? searchKey = model?.Search?.Value;
+            // Szűrt rekordok száma
+            int filteredCount = 0;
+
             if (!string.IsNullOrWhiteSpace(searchKey))
             {
                 searchKey = searchKey.Replace('.', ',');
