@@ -1,0 +1,1 @@
+npm install bootstrap datatables.net-vue3 datatables.net-bs5
