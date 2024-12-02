@@ -1,1 +1,1 @@
-Scaffold-DbContext "server=localhost;user id=root;database=tapanyagok" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -DataAnnotations -UseDatabaseNames -Force -NoPluralize 
+Scaffold-DbContext "server=localhost;user id=root;database=tapanyag" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -DataAnnotations -UseDatabaseNames -Force -NoPluralize 
